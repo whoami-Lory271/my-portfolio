@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorenzo De Santis | Software Engineer</title>
+    <meta name="description" content="Portfolio of Lorenzo De Santis, Software Engineer specializing in Backend Development and Machine Learning.">
+    
+    <!-- Fonts: Inter for a clean, modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons: FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            DEFAULT: '#1C033C', // Dark purple from resume
+                            light: '#371e77',   // Lighter purple from resume
+                            accent: '#4B28A4',  // Bright accent
+                        },
+                        neutral: {
+                            50: '#f9fafb',
+                            100: '#f3f4f6',
+                            200: '#e5e7eb',
+                            300: '#d1d5db',
+                            400: '#9ca3af',
+                            500: '#6b7280',
+                            600: '#4b5563',
+                            700: '#374151',
+                            800: '#1f2937',
+                            900: '#111827',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        
+        #mobile-menu.open {
+            max-height: 400px;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-neutral-50 text-neutral-800 antialiased selection:bg-primary-light selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-neutral-50/90 backdrop-blur-sm border-b border-neutral-200 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-xl font-bold tracking-tight text-primary hover:text-primary-light transition">
+                        LDS<span class="text-primary-accent">.</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-sm font-medium text-neutral-600 hover:text-primary transition">Home</a>
+                    <a href="#about" class="text-sm font-medium text-neutral-600 hover:text-primary transition">About</a>
+                    <a href="#experience" class="text-sm font-medium text-neutral-600 hover:text-primary transition">Experience</a>
+                    <a href="#projects" class="text-sm font-medium text-neutral-600 hover:text-primary transition">Projects</a>
+                    <a href="#contact" class="px-4 py-2 text-sm font-medium text-white bg-primary rounded-md hover:bg-primary-light transition shadow-sm">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-neutral-600 hover:text-primary focus:outline-none p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="md:hidden bg-white border-b border-neutral-200">
+            <div class="px-4 pt-2 pb-6 space-y-2 shadow-lg">
+                <a href="#home" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-neutral-700 hover:text-primary hover:bg-neutral-100">Home</a>
+                <a href="#about" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-neutral-700 hover:text-primary hover:bg-neutral-100">About</a>
+                <a href="#experience" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-neutral-700 hover:text-primary hover:bg-neutral-100">Experience</a>
+                <a href="#projects" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-neutral-700 hover:text-primary hover:bg-neutral-100">Projects</a>
+                <a href="#contact" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-neutral-700 hover:text-primary hover:bg-neutral-100">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-primary-light/5 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in relative z-10">
+            <span class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-primary uppercase bg-primary/10 rounded-full">Software Engineer</span>
+            <h1 class="text-5xl md:text-7xl font-bold text-neutral-900 tracking-tight mb-6">
+                Lorenzo De Santis
+            </h1>
+            <p class="mt-4 text-xl text-neutral-500 max-w-2xl mx-auto mb-8 leading-relaxed">
+                M.Sc. in Engineering in Computer Science. Specializing in Backend Development, Microservices, and Machine Learning.
+            </p>
+            
+            <div class="flex justify-center gap-6 mb-10">
+                <a href="https://github.com/whoami-Lory271" target="_blank" class="text-neutral-500 hover:text-primary transition text-2xl"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/desantis-lorenzo" target="_blank" class="text-neutral-500 hover:text-primary transition text-2xl"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:desantis.lorenzo.271@gmail.com" class="text-neutral-500 hover:text-primary transition text-2xl"><i class="fas fa-envelope"></i></a>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#projects" class="px-8 py-3 text-base font-medium text-white bg-primary rounded-md hover:bg-primary-light transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    View Portfolio
+                </a>
+                <a href="#contact" class="px-8 py-3 text-base font-medium text-primary-light bg-white border border-neutral-300 rounded-md hover:bg-neutral-50 transition shadow-sm hover:shadow-md">
+                    Contact Me
+                </a>
+            </div>
+            
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-neutral-400">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white border-t border-neutral-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-start">
+                
+                <!-- Skills & Tech Stack -->
+                <div class="fade-in mb-12 lg:mb-0 order-2 lg:order-1">
+                    <h3 class="text-2xl font-bold text-neutral-900 mb-6">Technical Proficiency</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-3">Languages</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded text-sm">Java</span>
+                                <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded text-sm">Python</span>
+                                <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded text-sm">C</span>
+                                <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded text-sm">SQL</span>
+                                <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded text-sm">JavaScript</span>
+                                <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded text-sm">Kotlin</span>
+                                <span class="px-3 py-1 bg-neutral-100 text-neutral-700 rounded text-sm">Bash</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-3">Technologies & Tools</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm">Spring Boot</span>
+                                <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm">Docker</span>
+                                <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm">Git</span>
+                                <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm">Linux</span>
+                                <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm">PostgreSQL</span>
+                                <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm">PyTorch</span>
+                                <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm">Google Colab</span>
+                                <span class="px-3 py-1 bg-blue-50 text-blue-700 rounded text-sm">Azure</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-sm font-semibold text-neutral-500 uppercase tracking-wider mb-3">Certifications</h4>
+                            <ul class="space-y-2 text-sm text-neutral-600">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-certificate text-primary mt-1"></i>
+                                    <span>Microsoft Certified: Azure Fundamentals (Mar 2024)</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-certificate text-primary mt-1"></i>
+                                    <span>IELTS General Training – Band 7.0 / C1 (May 2025)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bio -->
+                <div class="fade-in delay-100 order-1 lg:order-2">
+                    <h2 class="text-sm font-bold text-primary tracking-widest uppercase mb-3">About Me</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">Bridging robust engineering with intelligent algorithms.</h3>
+                    <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+                        I am a Software Engineer based in Rome, Italy, with a Master's degree in Computer Science Engineering from Sapienza University (110 cum laude).
+                    </p>
+                    <p class="text-lg text-neutral-600 mb-6 leading-relaxed">
+                        My expertise lies in backend systems, where I leverage Java and Spring to build scalable, dependable distributed systems. I also have a strong academic and practical background in Artificial Intelligence and Deep Learning.
+                    </p>
+                    <div class="p-6 bg-neutral-50 rounded-xl border border-neutral-100">
+                        <div class="flex items-center gap-4 mb-2">
+                            <i class="fas fa-language text-2xl text-primary-light"></i>
+                            <h4 class="font-bold text-neutral-900">Languages</h4>
+                        </div>
+                        <p class="text-neutral-600">Italian (Native), English (C1)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education Section -->
+    <section id="experience" class="py-24 bg-neutral-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-sm font-bold text-primary tracking-widest uppercase mb-3">Resume</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-neutral-900">Experience & Education</h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Work Experience -->
+                <div class="fade-in">
+                    <h4 class="text-xl font-bold text-neutral-900 mb-8 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded bg-primary/10 text-primary flex items-center justify-center"><i class="fas fa-briefcase text-sm"></i></span>
+                        Professional Experience
+                    </h4>
+                    
+                    <div class="space-y-8 border-l-2 border-neutral-200 pl-8 ml-4 relative">
+                        <!-- Job 1 -->
+                        <div class="relative">
+                            <span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full border-4 border-white bg-primary"></span>
+                            <h5 class="text-lg font-bold text-neutral-900">Software Engineer</h5>
+                            <p class="text-primary-light font-medium mb-1">Ringmaster S.r.l</p>
+                            <p class="text-sm text-neutral-400 mb-3">Jun 2022 - Present | Rome</p>
+                            <p class="text-neutral-600 text-sm leading-relaxed mb-2">
+                                Backend development of Middleware Gambling applications following CI/CD pipelines. Maintenance of Spring applications and PostgreSQL databases.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="text-xs bg-white border border-neutral-200 px-2 py-1 rounded text-neutral-500">Java</span>
+                                <span class="text-xs bg-white border border-neutral-200 px-2 py-1 rounded text-neutral-500">Spring</span>
+                                <span class="text-xs bg-white border border-neutral-200 px-2 py-1 rounded text-neutral-500">PostgreSQL</span>
+                            </div>
+                        </div>
+
+                        <!-- Job 2 -->
+                        <div class="relative">
+                            <span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full border-4 border-white bg-neutral-300"></span>
+                            <h5 class="text-lg font-bold text-neutral-900">Software Engineer Intern</h5>
+                            <p class="text-primary-light font-medium mb-1">Bytewise S.r.l</p>
+                            <p class="text-sm text-neutral-400 mb-3">Jun 2021 - Nov 2021 | Rome</p>
+                            <p class="text-neutral-600 text-sm leading-relaxed">
+                                Development of web applications using Express.js. Study of JavaScript, Node.js, and React basics. Linux server interaction.
+                            </p>
+                        </div>
+
+                         <!-- Job 3 -->
+                         <div class="relative">
+                            <span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full border-4 border-white bg-neutral-300"></span>
+                            <h5 class="text-lg font-bold text-neutral-900">Basics Linux Course</h5>
+                            <p class="text-primary-light font-medium mb-1">LUG Sapienza</p>
+                            <p class="text-sm text-neutral-400 mb-3">Oct 2018 - Nov 2018</p>
+                            <p class="text-neutral-600 text-sm leading-relaxed">
+                                Bash, Linux, VMware.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="fade-in delay-100">
+                    <h4 class="text-xl font-bold text-neutral-900 mb-8 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded bg-primary/10 text-primary flex items-center justify-center"><i class="fas fa-graduation-cap text-sm"></i></span>
+                        Education
+                    </h4>
+                    
+                    <div class="space-y-8 border-l-2 border-neutral-200 pl-8 ml-4 relative">
+                        <!-- Degree 1 -->
+                        <div class="relative">
+                            <span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full border-4 border-white bg-primary"></span>
+                            <h5 class="text-lg font-bold text-neutral-900">M.Sc. in Engineering in Computer Science</h5>
+                            <p class="text-primary-light font-medium mb-1">Sapienza University</p>
+                            <p class="text-sm text-neutral-400 mb-2">Sep 2021 - Oct 2023</p>
+                            <div class="inline-block px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded mb-3">110 with honors</div>
+                            <p class="text-neutral-600 text-sm leading-relaxed italic">
+                                Thesis: <a href="https://github.com/whoami-Lory271/SLinear-Time-Series-Forecasting" class="underline hover:text-primary">SLinear Time Series Forecasting</a>
+                            </p>
+                            <p class="text-neutral-500 text-xs mt-2">
+                                Algorithm Design, Cybersecurity, Distributed Systems, AI/ML, Deep Learning.
+                            </p>
+                        </div>
+
+                        <!-- Degree 2 -->
+                        <div class="relative">
+                            <span class="absolute -left-[41px] top-1 w-5 h-5 rounded-full border-4 border-white bg-neutral-300"></span>
+                            <h5 class="text-lg font-bold text-neutral-900">B.S. in Engineering in Computer Science</h5>
+                            <p class="text-primary-light font-medium mb-1">Sapienza University</p>
+                            <p class="text-sm text-neutral-400 mb-2">Sep 2018 - Oct 2021</p>
+                            <div class="inline-block px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded mb-3">110 with honors</div>
+                            <p class="text-neutral-600 text-sm leading-relaxed italic">
+                                Thesis available on <a href="https://github.com/whoami-Lory271/Tesi-Triennale" class="underline hover:text-primary">GitHub</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-white border-t border-neutral-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in">
+                <h2 class="text-sm font-bold text-primary tracking-widest uppercase mb-3">Portfolio</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-neutral-900">Selected Projects</h3>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                
+                <!-- Project 1: SLinear -->
+                <article class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-neutral-100 fade-in flex flex-col h-full">
+                    <div class="p-6 flex flex-col h-full">
+                        <div class="mb-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4">
+                                <i class="fas fa-brain text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-neutral-900 mb-2 group-hover:text-primary transition">SLinear</h4>
+                            <p class="text-sm font-semibold text-neutral-500 mb-3">Neural Network for Time Series</p>
+                            <p class="text-neutral-600 text-sm mb-4 line-clamp-4">
+                                A framework to train and test a neural network model on several time series datasets. Focused on making predictions about future time series data using PyTorch.
+                            </p>
+                        </div>
+                        <div class="mt-auto">
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs font-medium px-2 py-1 bg-neutral-100 text-neutral-600 rounded">Python</span>
+                                <span class="text-xs font-medium px-2 py-1 bg-neutral-100 text-neutral-600 rounded">PyTorch</span>
+                                <span class="text-xs font-medium px-2 py-1 bg-neutral-100 text-neutral-600 rounded">Scikit-Learn</span>
+                            </div>
+                            <a href="https://github.com/whoami-Lory271/SLinear-Time-Series-Forecasting" target="_blank" class="inline-flex items-center text-sm font-medium text-primary hover:text-primary-light">
+                                View Source <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2: Travel App -->
+                <article class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-neutral-100 fade-in delay-100 flex flex-col h-full">
+                    <div class="p-6 flex flex-col h-full">
+                        <div class="mb-4">
+                             <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4">
+                                <i class="fas fa-plane-departure text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-neutral-900 mb-2 group-hover:text-primary transition">Travel Application</h4>
+                            <p class="text-sm font-semibold text-neutral-500 mb-3">Android Social Travel App</p>
+                            <p class="text-neutral-600 text-sm mb-4 line-clamp-4">
+                                Android application to create, store, and share travels. Features Google Maps API integration for visualizing places and Firebase for data persistence.
+                            </p>
+                        </div>
+                        <div class="mt-auto">
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs font-medium px-2 py-1 bg-neutral-100 text-neutral-600 rounded">Java</span>
+                                <span class="text-xs font-medium px-2 py-1 bg-neutral-100 text-neutral-600 rounded">Android Studio</span>
+                                <span class="text-xs font-medium px-2 py-1 bg-neutral-100 text-neutral-600 rounded">Firebase</span>
+                            </div>
+                            <a href="https://github.com/Luca-Gaudenzi/Travel_Application" target="_blank" class="inline-flex items-center text-sm font-medium text-primary hover:text-primary-light">
+                                View Source <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3: Speed Detector -->
+                <article class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 border border-neutral-100 fade-in delay-200 flex flex-col h-full">
+                    <div class="p-6 flex flex-col h-full">
+                        <div class="mb-4">
+                             <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4">
+                                <i class="fas fa-tachometer-alt text-xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-neutral-900 mb-2 group-hover:text-primary transition">Speed Detector Manager</h4>
+                            <p class="text-sm font-semibold text-neutral-500 mb-3">Microservice Framework</p>
+                            <p class="text-neutral-600 text-sm mb-4 line-clamp-4">
+                                Microservice framework for receiving and analyzing traffic fines. Uses Microservices architecture patterns and ActiveMQ as a message broker.
+                            </p>
+                        </div>
+                        <div class="mt-auto">
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-xs font-medium px-2 py-1 bg-neutral-100 text-neutral-600 rounded">Spring</span>
+                                <span class="text-xs font-medium px-2 py-1 bg-neutral-100 text-neutral-600 rounded">Docker</span>
+                                <span class="text-xs font-medium px-2 py-1 bg-neutral-100 text-neutral-600 rounded">ActiveMQ</span>
+                            </div>
+                            <a href="https://github.com/whoami-Lory271/SpeedDetectorManager" target="_blank" class="inline-flex items-center text-sm font-medium text-primary hover:text-primary-light">
+                                View Source <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-neutral-50 border-t border-neutral-100">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-sm font-bold text-primary tracking-widest uppercase mb-3">Get in Touch</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-neutral-900">Let's connect.</h3>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-neutral-100 fade-in">
+                <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-6" id="contactForm">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-neutral-700 mb-2">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg bg-neutral-50 border border-neutral-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-neutral-700 mb-2">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-neutral-50 border border-neutral-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-neutral-700 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-lg bg-neutral-50 border border-neutral-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition"></textarea>
+                    </div>
+                    <button type="submit" class="w-full px-6 py-4 bg-primary text-white font-medium rounded-lg hover:bg-primary-light transition transform active:scale-[0.98] flex justify-center items-center gap-2">
+                        Send Message <i class="fas fa-paper-plane text-sm"></i>
+                    </button>
+                </form>
+                
+                <div class="mt-10 pt-6 border-t border-neutral-200 flex flex-col items-center gap-4 text-neutral-600">
+                    <div class="flex flex-col md:flex-row gap-6 text-center">
+                        <a href="mailto:desantis.lorenzo.271@gmail.com" class="flex items-center gap-2 hover:text-primary transition font-medium">
+                            <i class="fas fa-envelope text-primary"></i> desantis.lorenzo.271@gmail.com
+                        </a>
+                        <a href="tel:+393290347747" class="flex items-center gap-2 hover:text-primary transition font-medium">
+                            <i class="fas fa-mobile-alt text-primary"></i> +39 329 034 7747
+                        </a>
+                    </div>
+                    <div class="flex gap-6 mt-2">
+                        <a href="https://github.com/whoami-Lory271" target="_blank" class="hover:text-primary transition text-xl"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/desantis-lorenzo" target="_blank" class="hover:text-primary transition text-xl"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-neutral-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-primary font-bold text-xl">LDS.</div>
+            <p class="text-neutral-500 text-sm">© <span id="year"></span> Lorenzo De Santis.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Functionality -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = btn.querySelector('i');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('open');
+            if (menu.classList.contains('open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('open');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Dynamic Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Form Submission Handler (Demo)
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault(); 
+            const btn = form.querySelector('button');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+            btn.classList.remove('bg-primary');
+            btn.classList.add('bg-green-600');
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.classList.add('bg-primary');
+                btn.classList.remove('bg-green-600');
+                form.reset();
+                alert("Note: This is a static portfolio. Configure Formspree or a similar service in the HTML to send real emails.");
+            }, 3000);
+        });
+
+        // Fade-in Animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
