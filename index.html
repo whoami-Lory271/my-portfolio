@@ -74,6 +74,17 @@
             max-height: 400px;
             opacity: 1;
         }
+        
+        /* Avatar floating animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .avatar-float {
+            animation: float 6s ease-in-out infinite;
+        }
     </style>
 </head>
 <body class="bg-neutral-50 text-neutral-800 antialiased selection:bg-primary-light selection:text-white">
@@ -125,20 +136,30 @@
         <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-primary-light/5 rounded-full blur-3xl"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in relative z-10">
-            <!-- Changed Badge to emphasize Senior Software Engineer -->
+            
+            <!-- Avatar / Image -->
+            <div class="flex justify-center mb-8 avatar-float">
+                <div class="relative w-48 h-48 md:w-56 md:h-56 rounded-3xl overflow-hidden border-[6px] border-white shadow-2xl ring-1 ring-neutral-200">
+                     <!-- Using the exact filename you provided -->
+                     <img src="image_72887e.png" alt="Lorenzo De Santis" class="object-cover w-full h-full transform hover:scale-105 transition duration-700 ease-in-out">
+                </div>
+            </div>
+
+            <!-- Badge -->
             <span class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-primary uppercase bg-primary/10 rounded-full">Senior Software Engineer</span>
+            
             <h1 class="text-5xl md:text-7xl font-bold text-neutral-900 tracking-tight mb-6">
                 Lorenzo De Santis
             </h1>
-            <!-- Updated description to put High-Performance Coding first -->
+            
             <p class="mt-4 text-xl text-neutral-500 max-w-2xl mx-auto mb-8 leading-relaxed">
                 Architecting High-Performance Backend Systems and Scalable Cloud Solutions (Azure). Hands-on Technical Leader for critical migrations.
             </p>
             
             <div class="flex justify-center gap-6 mb-10">
-                <a href="https://github.com/whoami-Lory271" target="_blank" class="text-neutral-500 hover:text-primary transition text-2xl"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/desantis-lorenzo" target="_blank" class="text-neutral-500 hover:text-primary transition text-2xl"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:desantis.lorenzo.271@gmail.com" class="text-neutral-500 hover:text-primary transition text-2xl"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/whoami-Lory271" target="_blank" class="text-neutral-500 hover:text-primary transition text-2xl hover:-translate-y-1 transform duration-300"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/desantis-lorenzo" target="_blank" class="text-neutral-500 hover:text-primary transition text-2xl hover:-translate-y-1 transform duration-300"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:desantis.lorenzo.271@gmail.com" class="text-neutral-500 hover:text-primary transition text-2xl hover:-translate-y-1 transform duration-300"><i class="fas fa-envelope"></i></a>
             </div>
 
             <div class="flex flex-col sm:flex-row justify-center gap-4">
